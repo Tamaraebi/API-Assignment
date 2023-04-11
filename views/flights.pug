@@ -21,7 +21,6 @@ block main-content
                     p 
                         span(class="font-weight-bold") Link: 
                         span #{f.deeplink}
-                
                 form(action="/hotels",method="GET",class="button-container")
                     input(type="hidden", name="title", value= f.legs[0].destination.name)
                     button(type="submit") Check Hotels
