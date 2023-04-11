@@ -1,0 +1,32 @@
+block variables 
+
+doctype html 
+html 
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title #{title} | Vacation Prep
+    link(rel="stylesheet", type="text/css", href="/style.css")
+    script(src="script.js") 
+   
+  body
+    header#header 
+      .header-content   
+        h2#site-name 
+            | Vacation Prep : Find your Flights/ Hotels
+      nav#nav
+        ul
+          li
+            a(href="/") Home  
+          li
+            a(href="/flights") Flights
+          li
+            a(href="/hotels") Hotels  
+      form(id="search-form" action="/flights" method="GET" name="searchForm")
+        input(id="country" name="country" type="text" placeholder="Search location by city" aria-label="Search" )
+        button(type="submit" class="btn" id="search-btn")
+
+    main
+      block main-content 
+    footer#footer 
+      p &copy; Copyright TamaraEbi HTTP 5211, 2023.

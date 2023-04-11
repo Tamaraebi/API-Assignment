@@ -1,0 +1,27 @@
+extends layout 
+
+block main-content
+
+    h1 Flights 
+      div(id="flight-results") 
+            each f in flights
+                div(class="icon-text")
+                    p
+                        span(class="font-weight-bold") ID: 
+                        span #{f.id}
+                div(class="icon-text")
+                    p 
+                        span(class="font-weight-bold") Destination: 
+                        span #{f.legs[0].destination.name}
+                div(class="icon-text")
+                    p 
+                        span(class="font-weight-bold") Price: 
+                        span #{f.pricing_options[0].price.amount} 
+                div(class="icon-text")
+                    p 
+                        span(class="font-weight-bold") Link: 
+                        span #{f.deeplink}
+                
+                form(action="/hotels",method="GET",class="button-container")
+                    input(type="hidden", name="title", value= f.legs[0].destination.name)
+                    button(type="submit") Check Hotels
